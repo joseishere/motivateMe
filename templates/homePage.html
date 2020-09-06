@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900,900i" rel="stylesheet">
+  <style>
+    body {
+      text-align: center;
+
+      background-color: #FAACA8;
+      background-image: linear-gradient(45deg, #FAACA8 0%, #DDD6F3 93%, #ffffff 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    h1 {
+      padding-top: 5%;
+      font-size: 90px;
+      margin: 1%;
+    }
+
+    .quote {
+      font-size: 30px;
+      padding-bottom: 10px;
+      width: 80%;
+      margin: auto;
+    }
+
+    .time {
+      text-align: right;
+      font-size: 20px;
+      padding-right: .75%;
+      padding-top: .75%;
+
+    }
+
+    .time p {
+      line-height: 1.2;
+    }
+
+    mark {
+      background-color: black;
+      color: white;
+      padding: 2px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .weatherInfo {
+      font-size: 25px;
+      padding-top: 10px;
+    }
+
+    hr {
+      border: 2px solid black;
+      width: 25%;
+      border-radius: 2px;
+    }
+
+    input[type=text] {
+      -webkit-transition: width .4s ease-in-out;
+      transition: width .4s ease-in-out;
+      border-top: 2px solid #00000090;
+      border-left: 2px solid #00000090;
+      border-right: 2px solid #00000090;
+      border-bottom: 2px solid #00000090;
+      border-radius: 4px;
+      width: 20%;
+      padding: 6px;
+      font-size: 20px;
+    }
+
+    input[type=text]:focus {
+      width: 40%;
+    }
+
+    button {
+      height: 20px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    #footer {
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      height: 30px;
+      width: 100%;
+      background: #000;
+      color: white;
+      font-size: 22px;
+    }
+
+    * html #footer {
+      position: absolute;
+      top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+    }
+
+    .searchform {
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<div class="time">
+  <p>
+    <mark><b>{{ time }}</b></mark>
+  </p>
+  <p>
+    {{ dayOfWeek }}
+    <br>
+    {{ date }}
+  </p>
+</div>
+
+<body>
+
+  <h1><i>Hello, {{ name }} {{ name2 }}!</i></h1>
+
+  <div id="motivation">
+    <p class="quote">
+      {{ quote }}
+    </p>
+    <hr>
+    <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_self">
+
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Search Google here!" required="required" type="text" autofocus>
+
+    </form>
+
+  </div>
+  <div id="footer">
+    {{ weather }} in {{ city }} | High: {{ hi }}&#8457 / Low: {{ low }}&#8457
+  </div>
+
+</body>
+
+</html>
